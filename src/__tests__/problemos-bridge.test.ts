@@ -6,7 +6,7 @@ import { describe, expect, it } from 'vitest';
 
 describe('ProblemOS bridge', () => {
   it('converts the six-event contract into an idempotent VDAI payload', () => {
-    const output = join(mkdtempSync(join(tmpdir(), 'vdai-bridge-')), 'portable.json');
+    const output = join(mkdtempSync(join(tmpdir(), 'vdai-bridge-')), 'missing', 'nested', 'portable.json');
     execFileSync('node', ['scripts/problemos-bridge.mjs', 'fixtures/problemos-events.json', '--output', output]);
     const payload = JSON.parse(readFileSync(output, 'utf8'));
 

@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
 
 const REQUIRED_FIELDS = ['sourceKey', 'project', 'task', 'actor', 'eventType', 'timestamp', 'payloadRef'];
 const EVENT_ORDER = [
@@ -85,6 +86,7 @@ if (args[0]) {
   const payload = JSON.parse(await readFile(inputPath, 'utf8'));
   const portable = toPortable(validateContract(payload));
   if (outputPath) {
+    await mkdir(dirname(outputPath), { recursive: true });
     await writeFile(outputPath, `${JSON.stringify(portable, null, 2)}\n`, { mode: 0o600 });
     console.log(JSON.stringify({ mode: 'converted', events: payload.events.length, records: Object.values(portable.objects).flat().length, output: outputPath }));
   } else {
