@@ -3,7 +3,7 @@ import { OBJECT_IDS } from 'src/domain/object-identifiers';
 
 export default defineNavigationMenuItem({
   universalIdentifier: 'f0dd945a-cbe0-450e-93e1-d91d87fef733',
-  name: 'Help Requests', icon: 'IconMessageQuestion', position: 2,
+  name: 'Запросы помощи', icon: 'IconMessageQuestion', position: 2,
   type: NavigationMenuItemType.OBJECT,
   targetObjectUniversalIdentifier: OBJECT_IDS.helpRequest,
 });

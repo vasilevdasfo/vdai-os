@@ -3,7 +3,7 @@ import { OBJECT_IDS } from 'src/domain/object-identifiers';
 
 export default defineNavigationMenuItem({
   universalIdentifier: 'f0dd945a-cbe0-450e-93e1-d91d87fef731',
-  name: 'VDAI Projects', icon: 'IconBriefcase', position: 0,
+  name: 'Проекты', icon: 'IconBriefcase', position: 0,
   type: NavigationMenuItemType.OBJECT,
   targetObjectUniversalIdentifier: OBJECT_IDS.project,
 });
