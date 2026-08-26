@@ -9,6 +9,14 @@
 - Run `./scripts/bootstrap.sh` from Git Bash, WSL, or a Unix-compatible terminal.
 - Open `http://localhost:3000` and create the first workspace administrator.
 
+For Windows, run the read-only preflight from PowerShell after cloning:
+
+```powershell
+.\scripts\windows-preflight.ps1
+```
+
+If dependencies are missing, an administrator may explicitly run `.\scripts\windows-preflight.ps1 -Install`, restart when Docker Desktop requests it, and rerun the preflight. The script installs no VDAI credentials or secrets.
+
 ### Ubuntu Linux
 
 - Install Docker Engine and the Docker Compose plugin from Docker's official repository.
@@ -46,6 +54,19 @@ Verify every fixture field by reading the records back from Twenty:
 ```bash
 TWENTY_API_URL=http://localhost:3000 TWENTY_API_KEY='<temporary-key>' node scripts/import-portable.mjs fixtures/problemos-demo-portable.json --verify
 ```
+
+## ProblemOS bridge
+
+Convert the strict six-event synthetic contract into a portable VDAI payload:
+
+```bash
+node scripts/problemos-bridge.mjs fixtures/problemos-events.json --output runtime/problemos-portable.json
+node scripts/import-portable.mjs runtime/problemos-portable.json
+TWENTY_API_URL=http://localhost:3000 TWENTY_API_KEY='<temporary-key>' node scripts/import-portable.mjs runtime/problemos-portable.json --apply
+TWENTY_API_URL=http://localhost:3000 TWENTY_API_KEY='<temporary-key>' node scripts/import-portable.mjs runtime/problemos-portable.json --verify
+```
+
+The bridge accepts only synthetic records, the fixed event order, seven declared fields, opaque payload references and an independent L7 proof actor. It never reads Telegram messages or writes directly to the Twenty database.
 
 Revoke the temporary import key after use.
 

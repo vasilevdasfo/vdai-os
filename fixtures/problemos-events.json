@@ -1,0 +1,60 @@
+{
+  "format": "problemos-events-v1",
+  "synthetic": true,
+  "events": [
+    {
+      "sourceKey": "synthetic:bridge:intake:001",
+      "project": "problemos-bridge-demo",
+      "task": "first-problem-card",
+      "actor": "operator-l6",
+      "eventType": "problem.intake.started",
+      "timestamp": "2026-08-26T20:00:00.000Z",
+      "payloadRef": "synthetic://problemos/events/intake-001"
+    },
+    {
+      "sourceKey": "synthetic:bridge:card:001",
+      "project": "problemos-bridge-demo",
+      "task": "first-problem-card",
+      "actor": "operator-l6",
+      "eventType": "problem.card.created",
+      "timestamp": "2026-08-26T20:01:00.000Z",
+      "payloadRef": "synthetic://problemos/events/card-001"
+    },
+    {
+      "sourceKey": "synthetic:bridge:next-step:001",
+      "project": "problemos-bridge-demo",
+      "task": "first-problem-card",
+      "actor": "operator-l6",
+      "eventType": "task.next_step.selected",
+      "timestamp": "2026-08-26T20:02:00.000Z",
+      "payloadRef": "synthetic://problemos/events/next-step-001"
+    },
+    {
+      "sourceKey": "synthetic:bridge:history:001",
+      "project": "problemos-bridge-demo",
+      "task": "first-problem-card",
+      "actor": "operator-l6",
+      "eventType": "task.history.appended",
+      "timestamp": "2026-08-26T20:03:00.000Z",
+      "payloadRef": "synthetic://problemos/events/history-001"
+    },
+    {
+      "sourceKey": "synthetic:bridge:help:001",
+      "project": "problemos-bridge-demo",
+      "task": "first-problem-card",
+      "actor": "operator-l6",
+      "eventType": "help.request.created",
+      "timestamp": "2026-08-26T20:04:00.000Z",
+      "payloadRef": "synthetic://problemos/events/help-001"
+    },
+    {
+      "sourceKey": "synthetic:bridge:proof:001",
+      "project": "problemos-bridge-demo",
+      "task": "first-problem-card",
+      "actor": "reviewer-l7",
+      "eventType": "proof.confirmed",
+      "timestamp": "2026-08-26T20:05:00.000Z",
+      "payloadRef": "synthetic://problemos/events/proof-001"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 
-const requiredFiles = ['compose.yaml', '.env.example', 'LICENSE', 'NOTICE', 'SECURITY.md', 'SETUP.md', 'SBOM.cdx.json', 'fixtures/demo-portable.json', 'fixtures/problemos-demo-portable.json'];
+const requiredFiles = ['compose.yaml', '.env.example', 'LICENSE', 'NOTICE', 'SECURITY.md', 'SETUP.md', 'SBOM.cdx.json', 'fixtures/demo-portable.json', 'fixtures/problemos-demo-portable.json', 'fixtures/problemos-events.json', 'scripts/windows-preflight.ps1'];
 for (const file of requiredFiles) await readFile(file, 'utf8');
 
 async function files(root) {

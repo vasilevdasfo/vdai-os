@@ -61,6 +61,10 @@ for (const [objectName, rows] of Object.entries(payload.objects)) {
     }
     const duplicate = Boolean(matched);
     if (duplicate) {
+      const conflictingFields = Object.entries(data)
+        .filter(([key, value]) => JSON.stringify(matched[key]) !== JSON.stringify(value))
+        .map(([key]) => key);
+      if (conflictingFields.length) throw new Error(`${objectName}: identity conflict in ${conflictingFields.join(', ')}.`);
       skipped[objectName] += 1;
       continue;
     }

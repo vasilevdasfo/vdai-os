@@ -38,13 +38,13 @@
         "name": "Demo Operator L6",
         "memberRef": "synthetic:operator:l6",
         "clubLevel": 6,
-        "evidenceRef": "synthetic:proof:nikita-l6"
+        "evidenceRef": "synthetic:proof:operator-l6"
       },
       {
         "name": "Demo Reviewer L7",
         "memberRef": "synthetic:reviewer:l7",
         "clubLevel": 7,
-        "evidenceRef": "synthetic:proof:sasha-l7"
+        "evidenceRef": "synthetic:proof:reviewer-l7"
       }
     ],
     "vdaiGrants": [
