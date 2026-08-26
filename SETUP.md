@@ -36,6 +36,14 @@ pnpm twenty apply
 
 The browser OAuth page must show the same local Twenty instance. Review the permissions before approval. The VDAI default function role has no global data access.
 
+## Shared team access
+
+Do not send team invitations to a localhost or SSH-forwarded URL. For a shared
+company instance, complete the owner gates and external readback in
+`docs/SHARED_ACCESS.md`. Keep Twenty bound to loopback, terminate TLS at a
+reviewed reverse proxy, and set `SERVER_URL` to the exact approved HTTPS
+hostname.
+
 ## Load the synthetic demonstration
 
 - In Twenty, create a dedicated API key assigned to the narrowest VDAI role needed for import.

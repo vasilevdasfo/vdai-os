@@ -25,3 +25,6 @@ Do not open a public issue containing exploit details or private data. Send a mi
 - assign users and API keys to the minimum Twenty role;
 - test backup restoration and access revocation;
 - review upstream Twenty security notices before every upgrade.
+- keep the raw Twenty port bound to loopback; expose only the TLS reverse proxy;
+- disable open signup before sending named invitations;
+- verify one denied action for every non-admin role before admitting real data.
