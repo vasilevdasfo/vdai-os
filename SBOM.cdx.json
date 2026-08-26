@@ -1,0 +1,49 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:53df80ba-2144-4677-9f77-f0ab0d82ef12",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "vdai-os",
+      "version": "0.1.0",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    }
+  },
+  "components": [
+    {
+      "type": "framework",
+      "name": "twenty",
+      "version": "2.35.0",
+      "purl": "pkg:docker/twentycrm/twenty@v2.35.0",
+      "hashes": [{ "alg": "SHA-256", "content": "a8ab7d34ac102a3c75d4538f917b57ab3f3f853a2afcdf01b4e6fcb7dec2cd6f" }]
+    },
+    {
+      "type": "library",
+      "name": "twenty-sdk",
+      "version": "2.35.1",
+      "purl": "pkg:npm/twenty-sdk@2.35.1"
+    },
+    {
+      "type": "library",
+      "name": "twenty-client-sdk",
+      "version": "2.35.1",
+      "purl": "pkg:npm/twenty-client-sdk@2.35.1"
+    },
+    {
+      "type": "container",
+      "name": "postgres",
+      "version": "16-alpine",
+      "purl": "pkg:docker/library/postgres@16-alpine",
+      "hashes": [{ "alg": "SHA-256", "content": "cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685" }]
+    },
+    {
+      "type": "container",
+      "name": "redis",
+      "version": "7-alpine",
+      "purl": "pkg:docker/library/redis@7-alpine",
+      "hashes": [{ "alg": "SHA-256", "content": "ff02b58f971e7d7d156a1267e283fcbbeee91773b6aa36c49dac28ecfe28eadf" }]
+    }
+  ]
+}

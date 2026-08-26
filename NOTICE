@@ -1,0 +1,13 @@
+VDAI OS 0.1.0
+
+This repository contains an independent application built using the Twenty application SDK. It is not a fork of Twenty and does not include Twenty server source code.
+
+Tested upstream runtime:
+- Twenty v2.35.0
+- Docker manifest digest sha256:a8ab7d34ac102a3c75d4538f917b57ab3f3f853a2afcdf01b4e6fcb7dec2cd6f
+- https://github.com/twentyhq/twenty/releases/tag/twenty/v2.35.0
+
+Twenty's repository is mostly AGPLv3, with a Twenty Application Exception, MIT-licensed packages including the application SDK/tooling, and separately marked enterprise files. Review the current upstream license before redistribution or modification:
+https://github.com/twentyhq/twenty/blob/main/LICENSE
+
+Twenty names and trademarks belong to their respective owners. No trademark license is implied.

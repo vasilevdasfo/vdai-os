@@ -1,0 +1,71 @@
+name: vdai-os
+
+services:
+  server:
+    image: twentycrm/twenty:v2.35.0@sha256:a8ab7d34ac102a3c75d4538f917b57ab3f3f853a2afcdf01b4e6fcb7dec2cd6f
+    ports:
+      - "${VDAI_PORT:-3000}:3000"
+    volumes:
+      - server-data:/app/packages/twenty-server/.local-storage
+    environment: &twenty-environment
+      NODE_PORT: 3000
+      PG_DATABASE_URL: postgres://${PG_DATABASE_USER}:${PG_DATABASE_PASSWORD}@db:5432/${PG_DATABASE_NAME}
+      SERVER_URL: ${SERVER_URL}
+      REDIS_URL: redis://redis:6379
+      STORAGE_TYPE: local
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+      APP_SECRET: ${APP_SECRET}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:3000/healthz || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+
+  worker:
+    image: twentycrm/twenty:v2.35.0@sha256:a8ab7d34ac102a3c75d4538f917b57ab3f3f853a2afcdf01b4e6fcb7dec2cd6f
+    command: ["yarn", "worker:prod"]
+    volumes:
+      - server-data:/app/packages/twenty-server/.local-storage
+    environment:
+      <<: *twenty-environment
+      DISABLE_DB_MIGRATIONS: "true"
+      DISABLE_CRON_JOBS_REGISTRATION: "true"
+    depends_on:
+      server:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine@sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${PG_DATABASE_NAME}
+      POSTGRES_PASSWORD: ${PG_DATABASE_PASSWORD}
+      POSTGRES_USER: ${PG_DATABASE_USER}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_DATABASE_USER} -d ${PG_DATABASE_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine@sha256:ff02b58f971e7d7d156a1267e283fcbbeee91773b6aa36c49dac28ecfe28eadf
+    command: ["redis-server", "--maxmemory-policy", "noeviction", "--save", ""]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  db-data:
+  server-data:
