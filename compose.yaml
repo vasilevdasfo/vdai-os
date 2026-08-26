@@ -4,7 +4,7 @@ services:
   server:
     image: twentycrm/twenty:v2.35.0@sha256:a8ab7d34ac102a3c75d4538f917b57ab3f3f853a2afcdf01b4e6fcb7dec2cd6f
     ports:
-      - "${VDAI_PORT:-3000}:3000"
+      - "${VDAI_BIND:-127.0.0.1}:${VDAI_PORT:-3000}:3000"
     volumes:
       - server-data:/app/packages/twenty-server/.local-storage
     environment: &twenty-environment
