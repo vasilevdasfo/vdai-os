@@ -49,6 +49,11 @@ const MainPage = () => (
       ))}
     </section>
     <section style={{ ...cardStyle, maxWidth: '1086px', margin: '0 auto' }}>
+      <h2 style={{ margin: '0 0 12px', fontSize: '20px' }}>Как запустить проект</h2>
+      <p style={{ margin: '0 0 18px', color: '#5d5951', lineHeight: 1.55 }}>
+        Project → Task с owner → Help Request для критики → независимый Proof → решение scale / fix / stop.
+        Участник получает доступ только через Members & Levels и отдельный Project Access.
+      </p>
       <h2 style={{ margin: '0 0 12px', fontSize: '20px' }}>Лестница доступа</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(235px, 1fr))', gap: '8px' }}>
         {levels.map(([level, text]) => (
