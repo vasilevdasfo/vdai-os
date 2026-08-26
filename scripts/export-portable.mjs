@@ -11,7 +11,9 @@ for (const objectName of objectNames) {
   const response = await fetch(`${apiUrl.replace(/\/$/, '')}/rest/${objectName}?limit=500`, { headers: { Authorization: `Bearer ${apiKey}` } });
   if (!response.ok) throw new Error(`${objectName}: HTTP ${response.status}`);
   const payload = await response.json();
-  objects[objectName] = payload.data ?? payload[objectName] ?? payload;
+  const rows = payload?.data?.[objectName] ?? payload?.[objectName] ?? payload?.data ?? payload;
+  if (!Array.isArray(rows)) throw new Error(`${objectName}: unexpected response shape.`);
+  objects[objectName] = rows;
 }
 
 const output = { format: 'vdai-portable-v1', generatedAt: new Date().toISOString(), synthetic: false, objects };

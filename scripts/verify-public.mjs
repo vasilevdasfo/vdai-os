@@ -1,7 +1,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 
-const requiredFiles = ['compose.yaml', '.env.example', 'LICENSE', 'NOTICE', 'SECURITY.md', 'SETUP.md', 'SBOM.cdx.json', 'fixtures/demo-portable.json'];
+const requiredFiles = ['compose.yaml', '.env.example', 'LICENSE', 'NOTICE', 'SECURITY.md', 'SETUP.md', 'SBOM.cdx.json', 'fixtures/demo-portable.json', 'fixtures/problemos-demo-portable.json'];
 for (const file of requiredFiles) await readFile(file, 'utf8');
 
 async function files(root) {
@@ -31,6 +31,8 @@ for (const file of await files('.')) {
 
 const fixture = JSON.parse(await readFile('fixtures/demo-portable.json', 'utf8'));
 if (fixture.synthetic !== true || fixture.format !== 'vdai-portable-v1') findings.push('Demo fixture is not explicitly synthetic/portable-v1.');
+const problemOsFixture = JSON.parse(await readFile('fixtures/problemos-demo-portable.json', 'utf8'));
+if (problemOsFixture.synthetic !== true || problemOsFixture.format !== 'vdai-portable-v1') findings.push('ProblemOS fixture is not explicitly synthetic/portable-v1.');
 
 const compose = await readFile('compose.yaml', 'utf8');
 if (!compose.includes('twentycrm/twenty:v2.35.0@sha256:')) findings.push('Twenty image is not pinned by version and digest.');

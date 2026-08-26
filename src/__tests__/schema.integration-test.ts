@@ -34,11 +34,14 @@ describe('CoreApiClient', () => {
         id: true,
       },
     });
-    expect(created.createNote.id).toBeDefined();
+    const createdNote = created.createNote;
+    expect(createdNote).toBeDefined();
+    if (!createdNote) throw new Error('Twenty did not return the created note.');
+    expect(createdNote.id).toBeDefined();
 
     await client.mutation({
       destroyNote: {
-        __args: { id: created.createNote.id },
+        __args: { id: createdNote.id },
         id: true,
       },
     });

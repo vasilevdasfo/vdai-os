@@ -1,0 +1,96 @@
+{
+  "format": "vdai-portable-v1",
+  "generatedAt": "2026-08-26T00:00:00.000Z",
+  "synthetic": true,
+  "scenario": "ProblemOS onboarding, help request and independent proof",
+  "objects": {
+    "vdaiWorkspaces": [
+      {
+        "name": "VDAI Club Synthetic Lab",
+        "externalId": "90000000-0000-4000-8000-000000000001",
+        "privacy": "PRIVATE",
+        "levelCeiling": 8
+      }
+    ],
+    "vdaiProjects": [
+      {
+        "name": "ProblemOS Bot Pilot",
+        "externalId": "90000000-0000-4000-8000-000000000002",
+        "workspaceId": "90000000-0000-4000-8000-000000000001",
+        "sourceKey": "synthetic:problemos:project:pilot",
+        "ownerRef": "synthetic:steward:l8",
+        "levelCeiling": 7
+      }
+    ],
+    "vdaiTasks": [
+      {
+        "name": "Complete first Problem Card",
+        "externalId": "90000000-0000-4000-8000-000000000003",
+        "projectId": "90000000-0000-4000-8000-000000000002",
+        "sourceKey": "synthetic:problemos:task:first-card",
+        "ownerRef": "synthetic:operator:l6",
+        "nextStep": "Run the synthetic user flow and attach the event history",
+        "proofRequirement": "L7 reviewer confirms card, help request and trace are reproducible"
+      }
+    ],
+    "vdaiMemberships": [
+      {
+        "name": "Demo Operator L6",
+        "memberRef": "synthetic:operator:l6",
+        "clubLevel": 6,
+        "evidenceRef": "synthetic:proof:nikita-l6"
+      },
+      {
+        "name": "Demo Reviewer L7",
+        "memberRef": "synthetic:reviewer:l7",
+        "clubLevel": 7,
+        "evidenceRef": "synthetic:proof:sasha-l7"
+      }
+    ],
+    "vdaiGrants": [
+      {
+        "name": "L6 operator implements ProblemOS flow",
+        "projectId": "90000000-0000-4000-8000-000000000002",
+        "memberRef": "synthetic:operator:l6",
+        "projectRole": "EDITOR"
+      },
+      {
+        "name": "L7 reviewer checks ProblemOS architecture",
+        "projectId": "90000000-0000-4000-8000-000000000002",
+        "memberRef": "synthetic:reviewer:l7",
+        "projectRole": "REVIEWER"
+      }
+    ],
+    "vdaiHelpRequests": [
+      {
+        "name": "Review missing assumptions in the first card",
+        "taskId": "90000000-0000-4000-8000-000000000003",
+        "requestedByRef": "synthetic:operator:l6",
+        "participantRef": "synthetic:reviewer:l7",
+        "helpRole": "COMMENTER",
+        "request": "Identify one missing assumption and propose one bounded improvement"
+      }
+    ],
+    "vdaiProofs": [
+      {
+        "name": "Problem Card flow independently reproduced",
+        "taskId": "90000000-0000-4000-8000-000000000003",
+        "artifactRef": "synthetic://problemos/runs/first-card-v1",
+        "verifierRef": "synthetic:reviewer:l7",
+        "verdict": "ACCEPTED"
+      }
+    ],
+    "vdaiAutomations": [
+      {
+        "name": "Draft ProblemOS event projection",
+        "projectId": "90000000-0000-4000-8000-000000000002",
+        "ownerRef": "synthetic:operator:l6",
+        "tier": "A2_DRAFT",
+        "permissions": [
+          "read:synthetic-events",
+          "write:draft-task-history"
+        ]
+      }
+    ]
+  }
+}

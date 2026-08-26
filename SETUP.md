@@ -39,6 +39,14 @@ node scripts/import-portable.mjs fixtures/demo-portable.json
 TWENTY_API_URL=http://localhost:3000 TWENTY_API_KEY='<temporary-key>' node scripts/import-portable.mjs fixtures/demo-portable.json --apply
 ```
 
+For the synthetic ProblemOS end-to-end scenario, use `fixtures/problemos-demo-portable.json` in the same two commands. Repeating an import is safe: records with the same portable identity are skipped.
+
+Verify every fixture field by reading the records back from Twenty:
+
+```bash
+TWENTY_API_URL=http://localhost:3000 TWENTY_API_KEY='<temporary-key>' node scripts/import-portable.mjs fixtures/problemos-demo-portable.json --verify
+```
+
 Revoke the temporary import key after use.
 
 ## Backup, restore and export
