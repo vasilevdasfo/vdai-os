@@ -38,6 +38,19 @@ The browser OAuth page must show the same local Twenty instance. Review the perm
 
 ## Shared team access
 
+### Choose the collaboration mode first
+
+- **Local contributor mode:** every contributor runs the same GitHub revision
+  on their own computer. Git branches and pull requests synchronize code and
+  schema, but each localhost keeps an independent test database. CRM records,
+  comments and memberships do not synchronize automatically between laptops.
+- **Shared workspace mode:** contributors use one HTTPS-hosted Twenty instance
+  and therefore one database. Use this only after hosting, record isolation,
+  roles, backup and invitation gates have passed.
+
+Do not provision a shared server merely to review or develop code. Do not call
+two local instances a shared CRM.
+
 Do not send team invitations to a localhost or SSH-forwarded URL. For a shared
 company instance, complete the owner gates and external readback in
 `docs/SHARED_ACCESS.md`. Keep Twenty bound to loopback, terminate TLS at a
