@@ -23,7 +23,8 @@
     "verify:public": "node scripts/verify-public.mjs",
     "bridge:convert": "node scripts/problemos-bridge.mjs",
     "export:portable": "node scripts/export-portable.mjs",
-    "import:portable": "node scripts/import-portable.mjs"
+    "import:portable": "node scripts/import-portable.mjs",
+    "version:report": "node scripts/version-report.mjs"
   },
   "dependencies": {},
   "devDependencies": {
