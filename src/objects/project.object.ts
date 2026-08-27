@@ -15,5 +15,8 @@ export default defineObject({
       { value: 'PROBLEM', label: 'Проблема', position: 0, color: 'gray' }, { value: 'PILOT', label: 'Пилот', position: 1, color: 'blue' }, { value: 'PROOF', label: 'Доказательство', position: 2, color: 'yellow' }, { value: 'CASE', label: 'Кейс', position: 3, color: 'green' }, { value: 'SCALE', label: 'Масштабирование', position: 4, color: 'purple' },
     ] },
     { universalIdentifier: FIELD_IDS.project[6], name: 'pilotMetric', type: FieldType.TEXT, label: 'Метрика пилота' },
+    { universalIdentifier: FIELD_IDS.project[7], name: 'brief', type: FieldType.TEXT, label: 'Описание проекта' },
+    { universalIdentifier: FIELD_IDS.project[8], name: 'repositoryUrl', type: FieldType.TEXT, label: 'Репозиторий' },
+    { universalIdentifier: FIELD_IDS.project[9], name: 'workingAgreement', type: FieldType.TEXT, label: 'Как работаем' },
   ],
 });

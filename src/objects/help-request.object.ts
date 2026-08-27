@@ -13,5 +13,9 @@ export default defineObject({
       { value: 'OBSERVER', label: 'Наблюдение', position: 0, color: 'gray' }, { value: 'COMMENTER', label: 'Критика', position: 1, color: 'blue' }, { value: 'CONTRIBUTOR', label: 'Совместная работа', position: 2, color: 'green' }, { value: 'EDITOR', label: 'Редактирование', position: 3, color: 'yellow' },
     ] },
     { universalIdentifier: FIELD_IDS.helpRequest[4], name: 'request', type: FieldType.TEXT, label: 'Что именно нужно' },
+    { universalIdentifier: FIELD_IDS.helpRequest[5], name: 'response', type: FieldType.TEXT, label: 'Ответ участника' },
+    { universalIdentifier: FIELD_IDS.helpRequest[6], name: 'status', type: FieldType.SELECT, label: 'Статус ответа', defaultValue: "'PENDING'", options: [
+      { value: 'PENDING', label: 'Ожидает ответа', position: 0, color: 'gray' }, { value: 'ANSWERED', label: 'Ответ получен', position: 1, color: 'blue' }, { value: 'ACCEPTED', label: 'Принято', position: 2, color: 'green' },
+    ] },
   ],
 });
