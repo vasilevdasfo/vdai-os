@@ -1,3 +1,8 @@
+## Project operating rules
+
+The canonical VDAI OS workflow and economy contract is in `AGENTS.md`. Read it
+before this reference list; do not duplicate or fork that contract here.
+
 ## Base documentation
 
 - Getting started:
