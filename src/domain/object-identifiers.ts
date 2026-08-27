@@ -4,6 +4,7 @@ export const OBJECT_IDS = {
   grant: '18b27e5b-cb55-4d11-a78e-2c7ed0cb9005', helpRequest: '18b27e5b-cb55-4d11-a78e-2c7ed0cb9006',
   proof: '18b27e5b-cb55-4d11-a78e-2c7ed0cb9007', automation: '18b27e5b-cb55-4d11-a78e-2c7ed0cb9008',
   interaction: '18b27e5b-cb55-4d11-a78e-2c7ed0cb9009', taskEvent: '18b27e5b-cb55-4d11-a78e-2c7ed0cb9010',
+  taskComment: '18b27e5b-cb55-4d11-a78e-2c7ed0cb9011',
 } as const;
 
 export const FIELD_IDS = {
@@ -17,4 +18,5 @@ export const FIELD_IDS = {
   automation: ['28b27e5b-cb55-4d11-a78e-2c7ed0cb9801', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9802', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9803', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9804'],
   interaction: ['28b27e5b-cb55-4d11-a78e-2c7ed0cb9901', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9902', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9903', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9904', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9905', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9906'],
   taskEvent: ['28b27e5b-cb55-4d11-a78e-2c7ed0cb9a01', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9a02', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9a03', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9a04', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9a05'],
+  taskComment: ['28b27e5b-cb55-4d11-a78e-2c7ed0cb9b01', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9b02', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9b03', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9b04', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9b05', '28b27e5b-cb55-4d11-a78e-2c7ed0cb9b06'],
 } as const;

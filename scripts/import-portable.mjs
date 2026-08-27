@@ -27,6 +27,7 @@ const identityFields = {
   vdaiAutomations: ['projectId', 'ownerRef', 'tier'],
   vdaiInteractions: ['sourceRef'],
   vdaiTaskEvents: ['taskId', 'sourceRef', 'eventType'],
+  vdaiTaskComments: ['externalId'],
 };
 
 const baseUrl = apiUrl.replace(/\/$/, '');
