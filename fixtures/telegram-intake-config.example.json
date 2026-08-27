@@ -1,0 +1,44 @@
+{
+  "chatId": "-1001234567890",
+  "contactRef": "synthetic:telegram:reviewer",
+  "allowedSenderIds": [1001, 1002],
+  "sashaSenderId": 1002,
+  "workspace": {
+    "name": "Synthetic collaboration lab",
+    "externalId": "a1000000-0000-4000-8000-000000000001",
+    "privacy": "PRIVATE",
+    "levelCeiling": 8
+  },
+  "project": {
+    "name": "Synthetic OS collaboration",
+    "externalId": "a1000000-0000-4000-8000-000000000002",
+    "workspaceId": "a1000000-0000-4000-8000-000000000001",
+    "sourceKey": "synthetic:telegram:project:collaboration",
+    "ownerRef": "synthetic:steward:l8",
+    "levelCeiling": 7,
+    "productStage": "PILOT",
+    "pilotMetric": "Two tasks completed with independent proof"
+  },
+  "tasks": [
+    {
+      "key": "os",
+      "name": "Finish OS setup",
+      "externalId": "a1000000-0000-4000-8000-000000000003",
+      "projectId": "a1000000-0000-4000-8000-000000000002",
+      "sourceKey": "synthetic:telegram:task:os",
+      "ownerRef": "synthetic:steward:l8",
+      "nextStep": "Verify browser flow",
+      "proofRequirement": "L7 reviewer reproduces it",
+      "status": "ACTIVE",
+      "pilotMetric": "Browser flow reproduced"
+    }
+  ],
+  "topics": [
+    {
+      "name": "OS",
+      "taskKey": "os",
+      "keywords": ["os", "crm", "twenty"],
+      "decision": "Attach the redacted message summary to the OS task"
+    }
+  ]
+}

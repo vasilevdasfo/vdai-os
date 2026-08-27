@@ -25,6 +25,14 @@ const surfaces = [
   ['История задач', 'Кто, когда и почему создал или изменил задачу'],
 ] as const;
 
+const reviewerFlow = [
+  ['Пожелание', 'Сохраняем короткую выжимку из созвона или Telegram со ссылкой на первоисточник.'],
+  ['Задача', 'Фиксируем owner, следующий шаг, срок, метрику и критерий готовности.'],
+  ['Запрос помощи', 'Указываем, что именно нужно от L7: архитектурная критика, проверка или предложение улучшения.'],
+  ['Ответ L7', 'Reviewer комментирует задачу, но не меняет memberships, grants и чужой результат.'],
+  ['Proof', 'L7 принимает или отклоняет артефакт с причиной; ссылка без review не считается результатом.'],
+] as const;
+
 const cardStyle = {
   border: '1px solid #dedbd4',
   borderRadius: '12px',
@@ -49,6 +57,21 @@ const MainPage = () => (
           <p style={{ margin: '8px 0 0', color: '#6a665e', lineHeight: 1.45 }}>{text}</p>
         </article>
       ))}
+    </section>
+    <section style={{ ...cardStyle, maxWidth: '1086px', margin: '0 auto 20px' }}>
+      <h2 style={{ margin: '0 0 6px', fontSize: '20px' }}>Как синхронизироваться с L7 Reviewer</h2>
+      <p style={{ margin: '0 0 16px', color: '#5d5951', lineHeight: 1.55 }}>
+        Не копируем весь чат. Передаём только решение, задачу, точный запрос помощи и критерий независимой проверки.
+      </p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(185px, 1fr))', gap: '8px' }}>
+        {reviewerFlow.map(([title, text], index) => (
+          <div key={title} style={{ padding: '12px', borderTop: '2px solid #171715', background: '#faf8f4' }}>
+            <span style={{ color: '#8b2e2e', fontSize: '12px' }}>0{index + 1}</span>
+            <strong style={{ display: 'block', margin: '4px 0 6px' }}>{title}</strong>
+            <span style={{ color: '#5d5951', fontSize: '13px', lineHeight: 1.45 }}>{text}</span>
+          </div>
+        ))}
+      </div>
     </section>
     <section style={{ ...cardStyle, maxWidth: '1086px', margin: '0 auto' }}>
       <h2 style={{ margin: '0 0 12px', fontSize: '20px' }}>Как запустить проект</h2>

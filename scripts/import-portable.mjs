@@ -25,6 +25,8 @@ const identityFields = {
   vdaiHelpRequests: ['taskId', 'requestedByRef', 'participantRef', 'helpRole'],
   vdaiProofs: ['taskId', 'artifactRef', 'verifierRef'],
   vdaiAutomations: ['projectId', 'ownerRef', 'tier'],
+  vdaiInteractions: ['sourceRef'],
+  vdaiTaskEvents: ['taskId', 'sourceRef', 'eventType'],
 };
 
 const baseUrl = apiUrl.replace(/\/$/, '');
