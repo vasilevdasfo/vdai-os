@@ -12,5 +12,6 @@ export default defineObject({
     { universalIdentifier: FIELD_IDS.proof[3], name: 'verdict', type: FieldType.SELECT, label: 'Решение', defaultValue: "'PENDING'", options: [
       { value: 'PENDING', label: 'Ожидает проверки', position: 0, color: 'gray' }, { value: 'ACCEPTED', label: 'Принято', position: 1, color: 'green' }, { value: 'REJECTED', label: 'Возвращено', position: 2, color: 'red' },
     ] },
+    { universalIdentifier: FIELD_IDS.proof[4], name: 'accessSubjectId', type: FieldType.UUID, label: 'Участник доступа' },
   ],
 });

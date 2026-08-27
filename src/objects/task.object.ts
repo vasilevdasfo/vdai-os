@@ -17,5 +17,6 @@ export default defineObject({
     ] },
     { universalIdentifier: FIELD_IDS.task[7], name: 'dueAt', type: FieldType.DATE_TIME, label: 'Срок' },
     { universalIdentifier: FIELD_IDS.task[8], name: 'pilotMetric', type: FieldType.TEXT, label: 'Метрика результата' },
+    { universalIdentifier: FIELD_IDS.task[9], name: 'accessSubjectId', type: FieldType.UUID, label: 'Участник доступа' },
   ],
 });

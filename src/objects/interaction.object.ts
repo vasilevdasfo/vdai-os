@@ -14,5 +14,6 @@ export default defineObject({
     { universalIdentifier: FIELD_IDS.interaction[3], name: 'summary', type: FieldType.TEXT, label: 'Краткое содержание' },
     { universalIdentifier: FIELD_IDS.interaction[4], name: 'decision', type: FieldType.TEXT, label: 'Решение' },
     { universalIdentifier: FIELD_IDS.interaction[5], name: 'nextAction', type: FieldType.TEXT, label: 'Следующее действие' },
+    { universalIdentifier: FIELD_IDS.interaction[6], name: 'accessSubjectId', type: FieldType.UUID, label: 'Участник доступа' },
   ],
 });

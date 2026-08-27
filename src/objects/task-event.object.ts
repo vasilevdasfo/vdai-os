@@ -13,5 +13,6 @@ export default defineObject({
     { universalIdentifier: FIELD_IDS.taskEvent[2], name: 'actorRef', type: FieldType.TEXT, label: 'Кто изменил' },
     { universalIdentifier: FIELD_IDS.taskEvent[3], name: 'summary', type: FieldType.TEXT, label: 'Что изменилось' },
     { universalIdentifier: FIELD_IDS.taskEvent[4], name: 'sourceRef', type: FieldType.TEXT, label: 'Источник' },
+    { universalIdentifier: FIELD_IDS.taskEvent[5], name: 'accessSubjectId', type: FieldType.UUID, label: 'Участник доступа' },
   ],
 });

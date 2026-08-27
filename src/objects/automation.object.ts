@@ -12,5 +12,6 @@ export default defineObject({
       { value: 'A0_DEMO', label: 'A0 Demo', position: 0, color: 'gray' }, { value: 'A1_READ', label: 'A1 Read-only', position: 1, color: 'blue' }, { value: 'A2_DRAFT', label: 'A2 Draft', position: 2, color: 'green' }, { value: 'A3_GATED', label: 'A3 Gated action', position: 3, color: 'yellow' }, { value: 'A4_BOUNDED', label: 'A4 Bounded autopilot', position: 4, color: 'red' },
     ] },
     { universalIdentifier: FIELD_IDS.automation[3], name: 'permissions', type: FieldType.ARRAY, label: 'Declared permissions' },
+    { universalIdentifier: FIELD_IDS.automation[4], name: 'accessSubjectId', type: FieldType.UUID, label: 'Access subject' },
   ],
 });

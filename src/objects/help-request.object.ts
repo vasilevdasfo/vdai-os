@@ -17,5 +17,6 @@ export default defineObject({
     { universalIdentifier: FIELD_IDS.helpRequest[6], name: 'status', type: FieldType.SELECT, label: 'Статус ответа', defaultValue: "'PENDING'", options: [
       { value: 'PENDING', label: 'Ожидает ответа', position: 0, color: 'gray' }, { value: 'ANSWERED', label: 'Ответ получен', position: 1, color: 'blue' }, { value: 'ACCEPTED', label: 'Принято', position: 2, color: 'green' },
     ] },
+    { universalIdentifier: FIELD_IDS.helpRequest[7], name: 'accessSubjectId', type: FieldType.UUID, label: 'Участник доступа' },
   ],
 });

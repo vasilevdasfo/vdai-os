@@ -18,5 +18,6 @@ export default defineObject({
     { universalIdentifier: FIELD_IDS.project[7], name: 'brief', type: FieldType.TEXT, label: 'Описание проекта' },
     { universalIdentifier: FIELD_IDS.project[8], name: 'repositoryUrl', type: FieldType.TEXT, label: 'Репозиторий' },
     { universalIdentifier: FIELD_IDS.project[9], name: 'workingAgreement', type: FieldType.TEXT, label: 'Как работаем' },
+    { universalIdentifier: FIELD_IDS.project[10], name: 'accessSubjectId', type: FieldType.UUID, label: 'Участник доступа' },
   ],
 });

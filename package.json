@@ -25,6 +25,7 @@
     "export:portable": "node scripts/export-portable.mjs",
     "import:portable": "node scripts/import-portable.mjs",
     "version:report": "node scripts/version-report.mjs"
+    ,"security:rls": "node scripts/configure-project-rls.mjs"
   },
   "dependencies": {},
   "devDependencies": {

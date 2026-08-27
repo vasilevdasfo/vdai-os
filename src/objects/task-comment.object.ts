@@ -12,5 +12,6 @@ export default defineObject({
     { universalIdentifier: FIELD_IDS.taskComment[3], name: 'body', type: FieldType.TEXT, label: 'Комментарий' },
     { universalIdentifier: FIELD_IDS.taskComment[4], name: 'sourceRef', type: FieldType.TEXT, label: 'Источник' },
     { universalIdentifier: FIELD_IDS.taskComment[5], name: 'parentCommentId', type: FieldType.UUID, label: 'Ответ на комментарий' },
+    { universalIdentifier: FIELD_IDS.taskComment[6], name: 'accessSubjectId', type: FieldType.UUID, label: 'Участник доступа' },
   ],
 });
