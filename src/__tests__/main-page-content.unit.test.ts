@@ -13,4 +13,8 @@ describe('VDAI OS home learning page', () => {
     expect(page).toContain('реальные операции требуют отдельного доступа');
     expect(page).toContain('без ключей, денег и операций');
   });
+
+  it('shows truthful version and synchronization status', () => {
+    for (const text of ['Версия приложения', 'Telegram checkpoint', 'Доступ Саши', 'GitHub не синхронизирует задачи']) expect(page).toContain(text);
+  });
 });

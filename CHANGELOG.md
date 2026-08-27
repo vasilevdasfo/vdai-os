@@ -8,6 +8,7 @@ All notable changes to this application are documented in this file.
 - Added project-scoped task comment foundations and immutable audit projection.
 - Added Sasha collaboration intake and an Evgeny Windows pilot runbook.
 - Added the VDAI OS economy contract and local version readback.
+- Added a truthful home-page version/sync indicator and central CRM sync contract.
 
 ## 0.1.0
 

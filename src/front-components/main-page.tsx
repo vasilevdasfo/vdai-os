@@ -4,6 +4,7 @@ import {
   APP_DISPLAY_NAME,
   MAIN_PAGE_FRONT_COMPONENT_UNIVERSAL_IDENTIFIER,
 } from 'src/constants/universal-identifiers';
+import { VDAI_DATA_OWNERS, VDAI_SYNC_STATUS } from 'src/sync/sync-status';
 
 const levels = [
   ['L1', 'Обучение и открытая демонстрация'],
@@ -81,6 +82,24 @@ const MainPage = () => (
       <p style={{ maxWidth: '760px', margin: 0, color: '#5d5951', lineHeight: 1.55 }}>
         Рабочее пространство клуба: кто с нами, над чем работаем, что делать следующим шагом и чем доказан результат.
         Начните с инструкции ниже; CRM-ядро Twenty остаётся технической основой, а не моделью нашей экосистемы.
+      </p>
+      <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '8px' }}>
+        {[
+          ['Версия приложения', VDAI_SYNC_STATUS.appVersion],
+          ['Схема', VDAI_SYNC_STATUS.schemaContract],
+          ['Данные', VDAI_SYNC_STATUS.dataContract],
+          ['Режим', 'Локальный · не опубликован'],
+          ['Telegram checkpoint', String(VDAI_SYNC_STATUS.telegramCheckpoint)],
+          ['Доступ Саши', 'Не выдан'],
+        ].map(([label, value]) => (
+          <div key={label} style={{ padding: '10px 12px', borderRadius: '8px', background: '#ebe7df' }}>
+            <span style={{ display: 'block', color: '#716d64', fontSize: '11px' }}>{label}</span>
+            <strong style={{ display: 'block', marginTop: '3px', fontSize: '13px' }}>{value}</strong>
+          </div>
+        ))}
+      </div>
+      <p style={{ margin: '10px 0 0', color: '#716d64', fontSize: '12px' }}>
+        Код: {VDAI_DATA_OWNERS.codeAndSchema} · Рабочие данные: {VDAI_DATA_OWNERS.liveProjectsTasksComments} · GitHub не синхронизирует задачи.
       </p>
     </header>
     <section style={{ ...cardStyle, maxWidth: '1086px', margin: '0 auto 20px' }}>
