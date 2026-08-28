@@ -24,6 +24,18 @@ cd vdai-os
 
 Open `http://localhost:3000`, create the first workspace administrator, then follow `SETUP.md` to connect and install the VDAI application.
 
+The guided public onboarding source is in `site/`. It explains the ten-minute
+synthetic demo, Mac and Windows setup, read-only server preflight, the hybrid
+human-plus-agent collaboration model and the Telegram support boundary. Until
+the candidate release is tagged and independently verified, use the repository
+for review and do not present a branch URL as a stable download.
+
+```bash
+pnpm release:verify
+pnpm site:verify
+./scripts/server-preflight.sh /tmp/vdai-server-preflight.json
+```
+
 ## Security boundary
 
 Club level and project access are independent. Effective access is the lower of the member level and the named project grant. Secrets, payments, production, client data and external sends always require a separate permission and human gate.

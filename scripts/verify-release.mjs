@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+import { readFileSync } from 'node:fs'; import { dirname,resolve } from 'node:path'; import { fileURLToPath } from 'node:url';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..'),m=JSON.parse(readFileSync(resolve(root,'release/manifest.json'))),p=JSON.parse(readFileSync(resolve(root,'package.json'))),e=[];
+if(m.version!==p.version)e.push('version mismatch'); if(!m.releaseUrl.endsWith(`/v${p.version}`))e.push('wrong release URL'); if(m.sharedAccess!=='blocked_until_supported_isolation_https_backup_and_invite_adapter_pass')e.push('shared gate drift'); for(const f of ['scripts/bootstrap.sh','scripts/windows-bootstrap.ps1','scripts/server-preflight.sh','scripts/proof-receipt.mjs','fixtures/demo-portable.json'])try{readFileSync(resolve(root,f))}catch{e.push(`missing ${f}`)} if(e.length){console.error(e.join('\n'));process.exit(1)} console.log(`RELEASE_CONTRACT_PASS v${p.version} (${m.channel})`);

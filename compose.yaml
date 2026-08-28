@@ -26,6 +26,8 @@ services:
       timeout: 5s
       retries: 30
     restart: unless-stopped
+    mem_limit: ${VDAI_SERVER_MEMORY_LIMIT:-1024m}
+    cpus: ${VDAI_SERVER_CPU_LIMIT:-1.0}
 
   worker:
     image: twentycrm/twenty:v2.35.0@sha256:a8ab7d34ac102a3c75d4538f917b57ab3f3f853a2afcdf01b4e6fcb7dec2cd6f
@@ -40,6 +42,8 @@ services:
       server:
         condition: service_healthy
     restart: unless-stopped
+    mem_limit: ${VDAI_WORKER_MEMORY_LIMIT:-1024m}
+    cpus: ${VDAI_WORKER_CPU_LIMIT:-1.0}
 
   db:
     image: postgres:16-alpine@sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685
@@ -55,6 +59,8 @@ services:
       timeout: 5s
       retries: 20
     restart: unless-stopped
+    mem_limit: ${VDAI_DB_MEMORY_LIMIT:-768m}
+    cpus: ${VDAI_DB_CPU_LIMIT:-0.75}
 
   redis:
     image: redis:7-alpine@sha256:ff02b58f971e7d7d156a1267e283fcbbeee91773b6aa36c49dac28ecfe28eadf
@@ -65,6 +71,8 @@ services:
       timeout: 5s
       retries: 20
     restart: unless-stopped
+    mem_limit: ${VDAI_REDIS_MEMORY_LIMIT:-256m}
+    cpus: ${VDAI_REDIS_CPU_LIMIT:-0.25}
 
 volumes:
   db-data:

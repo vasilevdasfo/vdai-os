@@ -1,0 +1,11 @@
+{
+  "product": "VDAI OS",
+  "version": "0.1.0",
+  "channel": "candidate",
+  "repository": "https://github.com/vasilevdasfo/vdai-os",
+  "releaseUrl": "https://github.com/vasilevdasfo/vdai-os/releases/tag/v0.1.0",
+  "supported": {"node": ">=24.5.0 <25", "pnpm": ">=11.19.0 <12", "dockerCompose": ">=2.20", "platforms": ["macos", "windows", "linux-server-preflight"]},
+  "outcome": "Open one synthetic project and submit one help or critique request in ten minutes.",
+  "sharedAccess": "blocked_until_supported_isolation_https_backup_and_invite_adapter_pass",
+  "verifiedAt": null
+}

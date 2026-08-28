@@ -9,6 +9,11 @@
 - Run `./scripts/bootstrap.sh` from Git Bash, WSL, or a Unix-compatible terminal.
 - Open `http://localhost:3000` and create the first workspace administrator.
 
+On macOS/Linux, `scripts/bootstrap.sh` now runs `scripts/local-preflight.sh`,
+waits for the local health endpoint and writes a sanitized local proof receipt
+to the ignored `runtime/` directory. The receipt explicitly records that
+shared access was not proved.
+
 For Windows, run the read-only preflight from PowerShell after cloning:
 
 ```powershell
@@ -22,6 +27,17 @@ If dependencies are missing, an administrator may explicitly run `.\scripts\wind
 - Install Docker Engine and the Docker Compose plugin from Docker's official repository.
 - Add the operator to the Docker group only if your security policy permits it; Docker access is effectively host-root access.
 - Clone the repository and run `./scripts/bootstrap.sh`.
+
+Before any server planning, run the read-only inventory. Exit code `3` means
+the host does not meet the pilot profile; it does not authorize a repair:
+
+```bash
+./scripts/server-preflight.sh /tmp/vdai-server-preflight.json
+```
+
+Unknown services are never cleanup authorization. Classify them, snapshot the
+exact targets and obtain owner approval before any delete, resize, DNS, deploy,
+root or invitation action.
 
 ## Install the VDAI application
 

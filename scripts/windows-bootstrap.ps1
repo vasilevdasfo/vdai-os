@@ -39,5 +39,6 @@ if (-not $Start) {
 
 docker compose --project-directory $ProjectDir up -d
 docker compose --project-directory $ProjectDir ps
+node (Join-Path $ProjectDir 'scripts\proof-receipt.mjs') --platform windows --step local_stack_started --result pass
 Write-Host 'BOOTSTRAP_STARTED: local-only test instance is starting at http://localhost:3000'
-
+Write-Host 'This receipt proves local start only, not shared or production access.'
