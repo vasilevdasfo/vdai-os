@@ -24,6 +24,9 @@ generated
 
 # production
 /build
+/.build/
+/.vercel/
+/.playwright-cli/
 
 # misc
 .DS_Store

@@ -28,7 +28,9 @@
     "security:rls": "node scripts/configure-project-rls.mjs",
     "release:verify": "node scripts/verify-release.mjs",
     "release:build": "bash scripts/build-release.sh",
-    "site:verify": "node scripts/verify-onboarding-site.mjs"
+    "site:verify": "node scripts/verify-onboarding-site.mjs",
+    "site:build": "bash scripts/build-site.sh",
+    "site:deploy": "bash scripts/deploy-site.sh"
   },
   "dependencies": {},
   "devDependencies": {
